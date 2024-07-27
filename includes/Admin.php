@@ -7,6 +7,15 @@ namespace WpMega;
 class Admin{
 
     function __construct(){
+        $this->dispatch_action();
         new Admin\Menu();
+    }
+
+    public function dispatch_action(){
+
+        $addressboook = new Admin\Addressbook();
+
+        add_action('admin_init', [$addressboook, 'form_handler']);
+
     }
 }

@@ -30,6 +30,7 @@
                 </tr>
             </tbody>
         </table>
+        <?php wp_nonce_field( 'new-address' ); ?>
         <?php submit_button( __('Add Address', 'wp-mega'), 'primary', 'submit_address', true, null ); ?>
     </form>
 </div>
