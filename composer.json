@@ -3,5 +3,11 @@
     "description": "plugin for tutorial purpose",
     "type": "wordpress-plugin",
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "WpMega\\plugin\\": "includes/"
+        },
+        "files": []
+    }
 }
