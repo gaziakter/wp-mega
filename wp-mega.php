@@ -17,10 +17,12 @@
   */
  final class WP_Mega{
 
-    const $version = '1.0';
+    const version = '1.0';
 
     private function __construct(){
         $this->define_constants();
+
+        register_activation_hook(__FILE__, [$this, 'activate'] );
         
     }
 
@@ -44,6 +46,15 @@
         define('WP_MEGA_ASSETS', WP_MEGA_URL. '/assets');
     }
 
+    public function activate(){
+
+        $installed = get_option('wp_mega_installed');
+
+        if(! $installed){
+            update_option('wp_mega_installed', time())
+        }
+        update_option('wp_mega_version', WP_MEGA_VERSION );
+    }
  }
 
 
