@@ -12,7 +12,8 @@
     exit();
  }
 
- require_once __DIR__ . '/vendor/autoload.php';
+  require_once __DIR__ . '/vendor/autoload.php';
+
 
  /**
   * Main class
@@ -50,7 +51,7 @@
     }
 
     public function init_plugin(){
-
+        new \WpMega\Admin\Menu();
     }
 
     public function activate(){

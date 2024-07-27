@@ -1,12 +1,13 @@
 {
-    "name": "gazi/wp-mega",
-    "description": "plugin for tutorial purpose",
+    "name": "gaziakter768/wp-mega",
+    "description": "this plugin is for tutorial purpose",
     "type": "wordpress-plugin",
+    "license": "GPLv2",
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-4": {
-            "WpMega\\plugin\\": "includes/"
+            "WpMega\\": "includes/"
         },
         "files": []
     }
