@@ -17,7 +17,7 @@ class Menu{
             __('WP Mega', 'wp-mega'),
             $capability,
             $parent_slug,
-            [$this, 'plugin_page'],
+            [$this, 'addressbook_page'],
             'dashicons-cover-image'
         );
 
@@ -40,12 +40,9 @@ class Menu{
         );
     }
 
-    public function plugin_page(){
-        echo "Hello Bangladesh!";
-    }
-
     public function addressbook_page(){
-        echo 'Adress book dashbord';
+       $addressbook = new Addressbook();
+       $addressbook->plugin_page();
     }
 
     public function addressbook_setting(){
