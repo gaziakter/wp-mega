@@ -52,7 +52,12 @@
     }
 
     public function init_plugin(){
-        new \WpMega\Admin();
+
+        if(is_admin()){
+            new \WpMega\Admin();
+        } else{
+            new WpMega\Frontend();
+        }
     }
 
     public function activate(){
