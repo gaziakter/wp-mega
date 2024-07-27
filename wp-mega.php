@@ -23,6 +23,7 @@
         $this->define_constants();
 
         register_activation_hook(__FILE__, [$this, 'activate'] );
+        add_action('plugins_loaded', [$this, 'init_plugin']);
         
     }
 
@@ -46,12 +47,16 @@
         define('WP_MEGA_ASSETS', WP_MEGA_URL. '/assets');
     }
 
+    public function init_plugin(){
+        
+    }
+
     public function activate(){
 
         $installed = get_option('wp_mega_installed');
 
         if(! $installed){
-            update_option('wp_mega_installed', time())
+            update_option('wp_mega_installed', time());
         }
         update_option('wp_mega_version', WP_MEGA_VERSION );
     }

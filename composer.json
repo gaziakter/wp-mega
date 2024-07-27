@@ -1,0 +1,7 @@
+{
+    "name": "gazi/wp-mega",
+    "description": "plugin for tutorial purpose",
+    "type": "wordpress-plugin",
+    "minimum-stability": "dev",
+    "require": {}
+}
