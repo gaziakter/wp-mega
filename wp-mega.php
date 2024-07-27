@@ -6,6 +6,7 @@
 * Description: WP Mega only for practical purpose. 
 * Author: Gazi Akter
 * Version: 1.0.0
+* text-domain: wp-mega
  */
 
  if(!defined('ABSPATH')){
@@ -51,7 +52,7 @@
     }
 
     public function init_plugin(){
-        new \WpMega\Admin\Menu();
+        new \WpMega\Admin();
     }
 
     public function activate(){
