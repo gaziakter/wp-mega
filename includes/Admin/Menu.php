@@ -26,8 +26,17 @@ class Menu{
             __('Address Book', 'wp-mega'), 
             __('Address Book', 'wp-mega'),
             $capability, 
-            'wp-mega-addressbook', 
+            $parent_slug, 
             [$this, 'addressbook_page'],
+        );
+
+        add_submenu_page( 
+            $parent_slug,
+            __('Settings', 'wp-mega'), 
+            __('Settings', 'wp-mega'), 
+            $capability, 
+            'wp-mega-settings', 
+            [$this, 'addressbook_setting'],
         );
     }
 
@@ -37,5 +46,9 @@ class Menu{
 
     public function addressbook_page(){
         echo 'Adress book dashbord';
+    }
+
+    public function addressbook_setting(){
+        echo 'Welcome to address book settings';
     }
 }
