@@ -7,7 +7,9 @@ namespace WpMega;
 class Admin{
 
     function __construct(){
+        
         $this->dispatch_action();
+        
         new Admin\Menu();
     }
 
