@@ -9,6 +9,6 @@
         "psr-4": {
             "WpMega\\": "includes/"
         },
-        "files": []
+        "files": ["includes/functions.php"]
     }
 }

@@ -3,7 +3,7 @@
         'name' => 'gaziakter768/wp-mega',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '27c32c4ca0e5d68b9338a7523f69bb7c49c464a6',
+        'reference' => 'e8b3229ad2a262355dc22b8189ddac626162e703',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'gaziakter768/wp-mega' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '27c32c4ca0e5d68b9338a7523f69bb7c49c464a6',
+            'reference' => 'e8b3229ad2a262355dc22b8189ddac626162e703',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

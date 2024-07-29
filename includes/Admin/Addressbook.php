@@ -44,6 +44,7 @@ class Addressbook{
             wp_die('Are you cheating?');
         }
 
+        var_dump(wp_mega_insert_address());
         var_dump($_POST);
         exit;
     }
