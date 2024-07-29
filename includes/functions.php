@@ -4,7 +4,7 @@ function wp_mega_insert_address($arg = []){
 
     global $wpdb;
 
-    if(empty($data['name'])){
+    if(empty($arg['name'])){
         return new WP_Error('no-name', __('You must provide a name.', 'wp-mega'));
     }
 
