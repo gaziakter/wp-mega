@@ -62,9 +62,12 @@
 
     public function activate(){
 
+        $installer = new WpMega\Installer;
+        $installer->run();
+
+    }
 
  }
-
 
  function wp_mega(){
     return WP_Mega::init();
