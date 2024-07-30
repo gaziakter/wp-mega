@@ -3,7 +3,12 @@
 namespace WpMega\Admin;
 
 class Menu{
-    function __construct(){
+
+    public $addressbook;
+
+    function __construct($addressbook){
+
+        $this->addressbook = $addressbook;
         add_action('admin_menu', [$this, 'admin_menu']);
     }
 
@@ -17,7 +22,7 @@ class Menu{
             __('WP Mega', 'wp-mega'),
             $capability,
             $parent_slug,
-            [$this, 'addressbook_page'],
+            [$this->addressbook, 'plugin_page'],
             'dashicons-cover-image'
         );
 
@@ -27,7 +32,7 @@ class Menu{
             __('Address Book', 'wp-mega'),
             $capability, 
             $parent_slug, 
-            [$this, 'addressbook_page'],
+            [$this->addressbook, 'plugin_page'],
         );
 
         add_submenu_page( 
@@ -40,10 +45,6 @@ class Menu{
         );
     }
 
-    public function addressbook_page(){
-       $addressbook = new Addressbook();
-       $addressbook->plugin_page();
-    }
 
     public function addressbook_setting(){
         echo 'Welcome to address book settings';

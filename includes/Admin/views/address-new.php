@@ -1,6 +1,8 @@
 <div class="wrap">
     <h1 class="wp-heading-inline"><?php _e('New Address', 'wp-mega'); ?></h1>
 
+    <?php var_dump( $this->errors ); ?>
+
     <form action="" method="post">
         <table class="form-table">
             <tbody>
