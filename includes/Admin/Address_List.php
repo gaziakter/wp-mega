@@ -15,7 +15,17 @@ class Address_List extends \WP_List_Table{
         parent:: __construct([
             'singular' => 'contact',
             'plural' => 'contacts',
-            'singular' => false
+            'ajax' => false
         ]);
+    }
+
+    public get_columns(){
+        return [
+            'cb' => '<input type"checkbox"',
+            'name' => __('Name', 'wp-mega'),
+            'address' => __('Address', 'wp-mega'),
+            'phone' => __('Phone', 'wp-mega'),
+            'created_at' => __('Date', 'wp-mega')
+        ];
     }
 }
