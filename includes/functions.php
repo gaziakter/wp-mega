@@ -44,28 +44,24 @@ function wp_mega_get_addressess($args = []){
     global $wpdb;
 
     $defaults = [
-        'number' => 20,
-        'offset' => 0,
+        'number'  => 20,
+        'offset'  => 0,
         'orderby' => 'id',
-        'order' => 'ASC'
+        'order'   => 'ASC'
     ];
 
     $args = wp_parse_args( $args, $defaults );
 
-    $items = $wpdb->get_results(
-        $wpdb->prepare(
+    $sql = $wpdb->prepare(
             "SELECT * FROM {$wpdb->prefix}ac_addresses
-            ORDER BY %s %s
+            ORDER BY {$args['orderby']} {$args['order']}
             LIMIT %d, %d",
-
-            $args['orderby'],
-            $args['orderby'],
-            $args['offset'],
-            $args['number']
-        )
+            $args['offset'], $args['number']
     );
 
-    return  $items;
+    $items = $wpdb->get_results( $sql );
+
+    return $items;
 }
 
 /**
