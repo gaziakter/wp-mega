@@ -19,6 +19,8 @@ class Address_List extends \WP_List_Table{
         ]);
     }
 
+
+    
     public function get_columns(){
         return [
             'cb' => '<input type"checkbox"',
@@ -35,6 +37,15 @@ class Address_List extends \WP_List_Table{
         $hidden = [];
         $sortable = $this->get_sortable_columns();
 
+        $per_page =20;
+
         $this->_column_headers = [$column, $hidden, $sortable];
+
+        $this->items = wp_mega_get_addressess();
+
+        $this->set_pagination_args([
+            'total_items' => gazi_mega_addresss_count(),
+            'per_page'=>  $per_page,
+        ]);
     }
 }
