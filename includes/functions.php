@@ -38,7 +38,7 @@ function wp_mega_insert_address($args = []){
 
 
 /**
- * 
+ * Get Address function
  */
 function wp_mega_get_addressess($args = []){
     global $wpdb;
@@ -66,4 +66,12 @@ function wp_mega_get_addressess($args = []){
     );
 
     return  $items;
+}
+
+/**
+ * Get Count function
+ */
+function gazi_mega_addresss_count(){
+    global $wpdb;
+    return (int) $wpdb->get_var("SELECT count(id) FROM {$wpdb->prefix}ac_addresses");
 }
