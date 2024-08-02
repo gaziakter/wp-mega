@@ -12,6 +12,9 @@
                     </th>
                     <td>
                         <input type="text" name="name" id="name" class="regular-text" value="">
+                        <?php if(isset($this->errors['name'])){?>
+                            <p class="description error"><?php echo $this->errors['name']; ?></p>
+                        <?php } ?>
                     </td>
                 </tr>
                 <tr>
