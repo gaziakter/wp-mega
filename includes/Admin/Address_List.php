@@ -31,6 +31,15 @@ class Address_List extends \WP_List_Table{
         ];
     }
 
+    function get_sortable_columns() {
+        $sortable_columns = [
+            'name'       => [ 'name', true ],
+            'created_at' => [ 'created_at', true ],
+        ];
+
+        return $sortable_columns;
+    }
+
     protected function column_default($item, $column_name){
 
         switch($column_name){
@@ -76,11 +85,23 @@ class Address_List extends \WP_List_Table{
         $hidden = [];
         $sortable = $this->get_sortable_columns();
 
-        $per_page =20;
+        $per_page     = 20;
+        $current_page = $this->get_pagenum();
+        $offset       = ( $current_page - 1 ) * $per_page;
+
+        $args = [
+            'number' => $per_page,
+            'offset' => $offset,
+        ];
 
         $this->_column_headers = [$column, $hidden, $sortable];
 
-        $this->items = wp_mega_get_addressess();
+        if ( isset( $_REQUEST['orderby'] ) && isset( $_REQUEST['order'] ) ) {
+            $args['orderby'] = $_REQUEST['orderby'];
+            $args['order']   = $_REQUEST['order'] ;
+        }
+
+        $this->items = wp_mega_get_addressess($args);
 
         $this->set_pagination_args([
             'total_items' => gazi_mega_addresss_count(),
