@@ -19,6 +19,17 @@ class Address_List extends \WP_List_Table{
         ]);
     }
 
+    function no_items() {
+        _e( 'No address found', 'wp-mega' );
+    }
+
+    function get_bulk_actions() {
+        $actions = array(
+            'trash'  => __( 'Move to Trash', 'wp-mega' ),
+        );
+
+        return $actions;
+    }
 
     
     public function get_columns(){
@@ -85,7 +96,7 @@ class Address_List extends \WP_List_Table{
         $hidden = [];
         $sortable = $this->get_sortable_columns();
 
-        $per_page     = 20;
+        $per_page     = 2;
         $current_page = $this->get_pagenum();
         $offset       = ( $current_page - 1 ) * $per_page;
 

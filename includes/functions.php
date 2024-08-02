@@ -71,3 +71,15 @@ function gazi_mega_addresss_count(){
     global $wpdb;
     return (int) $wpdb->get_var("SELECT count(id) FROM {$wpdb->prefix}ac_addresses");
 }
+
+
+/**
+ * Fetch a single contact form the db
+ */
+function wp_mega_address($id){
+
+    global $wpdb;
+
+    return $wpdb->get_row(
+        $wpdb->prepare("SELECT * FROM {$wpdb->prefix}ac_addresses WHERE id = %d", $id));
+}
