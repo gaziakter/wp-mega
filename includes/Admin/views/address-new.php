@@ -12,8 +12,8 @@
                     </th>
                     <td>
                         <input type="text" name="name" id="name" class="regular-text" value="">
-                        <?php if(isset($this->errors['name'])){?>
-                            <p class="description error"><?php echo $this->errors['name']; ?></p>
+                        <?php if ( $this->get_error( 'name' ) ) { ?>
+                            <p class="description error"><?php echo $this->get_error( 'name' ); ?></p>
                         <?php } ?>
                     </td>
                 </tr>
@@ -31,6 +31,9 @@
                     </th>
                     <td>
                         <input type="text" name="phone" id="phone" class="regular-text" value="">
+                        <?php if ( $this->get_error( 'phone' ) ) { ?>
+                            <p class="description error"><?php echo $this->get_error( 'phone' ); ?></p>
+                        <?php } ?>
                     </td>
                 </tr>
             </tbody>

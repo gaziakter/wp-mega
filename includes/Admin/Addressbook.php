@@ -81,4 +81,14 @@ class Addressbook{
         
         exit;
     }
+
+    public function get_error($key){
+        
+        if(isset($this->errors[$key])){
+            return $this->errors[$key];
+        } else{
+            return false;
+        }
+
+    }
 }
