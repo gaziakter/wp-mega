@@ -12,14 +12,14 @@ if(! class_exists('WP_List_Table')){
 class Address_List extends \WP_List_Table{
 
     function __construct(){
-        parent:: __construct([
+        parent::__construct([
             'singular' => 'contact',
             'plural' => 'contacts',
             'ajax' => false
         ]);
     }
 
-    public get_columns(){
+    public function get_columns(){
         return [
             'cb' => '<input type"checkbox"',
             'name' => __('Name', 'wp-mega'),
@@ -27,5 +27,14 @@ class Address_List extends \WP_List_Table{
             'phone' => __('Phone', 'wp-mega'),
             'created_at' => __('Date', 'wp-mega')
         ];
+    }
+
+    public function prepare_items(){
+
+        $column = $this->get_columns();
+        $hidden = [];
+        $sortable = $this->get_sortable_columns();
+
+        $this->_column_headers = [$column, $hidden, $sortable];
     }
 }
