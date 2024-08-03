@@ -17,9 +17,8 @@ class Admin{
 
     public function dispatch_action($addressboook){
 
-
-
         add_action('admin_init', [$addressboook, 'form_handler']);
+        add_action( 'admin_post_wd-ac-delete-address', [ $addressboook, 'delete_address' ] );
 
     }
 }
