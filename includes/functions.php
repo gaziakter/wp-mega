@@ -83,18 +83,3 @@ function wp_mega_address($id){
     return $wpdb->get_row(
         $wpdb->prepare("SELECT * FROM {$wpdb->prefix}ac_addresses WHERE id = %d", $id));
 }
-
-
-/**
- * Delete function
- */
-function wp_mega_delete_address($id){
-
-        global $wpdb;
-
-        return $wpdb->delete(
-            $wpdb->prefix.'ac_addresses',
-            ['id' => $id],
-            ['%d']
-        );
-}
