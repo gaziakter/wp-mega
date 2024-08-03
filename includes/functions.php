@@ -40,7 +40,7 @@ function wp_mega_insert_address($args = []){
 /**
  * Get Address function
  */
-function wp_mega_get_addressess($args = []){
+function wp_mega_get_address($args = []){
     global $wpdb;
 
     $defaults = [
@@ -67,7 +67,7 @@ function wp_mega_get_addressess($args = []){
 /**
  * Get Count function
  */
-function gazi_mega_addresss_count(){
+function gazi_mega_address_count(){
     global $wpdb;
     return (int) $wpdb->get_var("SELECT count(id) FROM {$wpdb->prefix}ac_addresses");
 }
@@ -82,4 +82,37 @@ function wp_mega_address($id){
 
     return $wpdb->get_row(
         $wpdb->prepare("SELECT * FROM {$wpdb->prefix}ac_addresses WHERE id = %d", $id));
+}
+
+
+/**
+ * Fetch a single contact from the DB
+ *
+ * @param  int $id
+ *
+ * @return object
+ */
+function wp_mega_get_address_edit( $id ) {
+    global $wpdb;
+
+    return $wpdb->get_row(
+        $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ac_addresses WHERE id = %d", $id )
+    );
+}
+
+/**
+ * Delete an address
+ *
+ * @param  int $id
+ *
+ * @return int|boolean
+ */
+function wd_ac_delete_address( $id ) {
+    global $wpdb;
+
+    return $wpdb->delete(
+        $wpdb->prefix . 'ac_addresses',
+        [ 'id' => $id ],
+        [ '%d' ]
+    );
 }

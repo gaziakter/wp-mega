@@ -1,4 +1,5 @@
 <div class="wrap">
+
     <h1 class="wp-heading-inline"><?php _e('Edit Address', 'wp-mega'); ?></h1>
 
     <form action="" method="post">
@@ -9,7 +10,7 @@
                         <label for="name"><?php _e('Name', 'wp-mega'); ?></label>
                     </th>
                     <td>
-                        <input type="text" name="name" id="name" class="regular-text" value="">
+                        <input type="text" name="name" id="name" class="regular-text" value="<?php if(!empty($address->name)): echo esc_attr($address->name); endif; ?>">
                         <?php if ( $this->has_error( 'name' ) ) { ?>
                             <p class="description error"><?php echo $this->get_error( 'name' ); ?></p>
                         <?php } ?>
@@ -20,7 +21,7 @@
                         <label for="address"><?php _e('Address', 'wp-mega'); ?></label>
                     </th>
                     <td>
-                        <textarea name="address" id="address" class="regular-text"></textarea>
+                        <textarea name="address" id="address" class="regular-text"><?php if(!empty($address->address)): echo esc_textarea($address->address); endif; ?></textarea>
                     </td>
                 </tr>
                 <tr class="row <?php echo $this->has_error('phone') ? 'form-invalid': '';?>">
@@ -28,7 +29,7 @@
                         <label for="phone"><?php _e('Phone', 'wp-mega'); ?></label>
                     </th>
                     <td>
-                        <input type="text" name="phone" id="phone" class="regular-text" value="">
+                        <input type="text" name="phone" id="phone" class="regular-text" value="<?php if(!empty($address->phone)): echo esc_attr($address->phone); endif; ?>">
                         <?php if ( $this->has_error( 'phone' ) ) { ?>
                             <p class="description error"><?php echo $this->get_error( 'phone' ); ?></p>
                         <?php } ?>

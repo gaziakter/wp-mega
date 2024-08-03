@@ -112,10 +112,10 @@ class Address_List extends \WP_List_Table{
             $args['order']   = $_REQUEST['order'] ;
         }
 
-        $this->items = wp_mega_get_addressess($args);
+        $this->items = wp_mega_get_address($args);
 
         $this->set_pagination_args([
-            'total_items' => gazi_mega_addresss_count(),
+            'total_items' => gazi_mega_address_count(),
             'per_page'=>  $per_page,
         ]);
     }
