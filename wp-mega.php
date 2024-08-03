@@ -55,6 +55,8 @@
 
     public function init_plugin(){
 
+        new WpMega\Assets();
+
         if(is_admin()){
             new \WpMega\Admin();
         } else{

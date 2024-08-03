@@ -17,7 +17,7 @@ class Menu{
         $parent_slug =  'wp-mega';
         $capability = 'manage_options';
 
-        add_menu_page(
+        $hook =  add_menu_page(
             __('WP Mega', 'wp-mega'),
             __('WP Mega', 'wp-mega'),
             $capability,
@@ -43,10 +43,21 @@ class Menu{
             'wp-mega-settings', 
             [$this, 'addressbook_setting'],
         );
+
+        add_action( 'admin_head-' . $hook, [ $this, 'enqueue_assets' ] );
     }
 
 
     public function addressbook_setting(){
         echo 'Welcome to address book settings';
+    }
+
+        /**
+     * Enqueue scripts and styles
+     *
+     * @return void
+     */
+    public function enqueue_assets() {
+        wp_enqueue_style( 'academy-admin-style' );
     }
 }
