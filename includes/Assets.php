@@ -26,6 +26,16 @@ class Assets {
                 'src'     => WP_MEGA_ASSETS . '/js/frontend.js',
                 'version' => filemtime( WP_MEGA_PATH . '/assets/js/frontend.js' ),
                 'deps'    => [ 'jquery' ]
+            ],
+            'academy-enquiry-script' => [
+                'src'     => WP_MEGA_ASSETS . '/js/enquiry.js',
+                'version' => filemtime( WP_MEGA_PATH . '/assets/js/enquiry.js' ),
+                'deps'    => [ 'jquery' ]
+            ],
+            'academy-admin-script' => [
+                'src'     => WP_MEGA_ASSETS . '/js/admin.js',
+                'version' => filemtime( WP_MEGA_PATH . '/assets/js/admin.js' ),
+                'deps'    => [ 'jquery', 'wp-util' ]
             ]
         ];
     }
@@ -40,6 +50,10 @@ class Assets {
             'academy-style' => [
                 'src'     => WP_MEGA_ASSETS . '/css/frontend.css',
                 'version' => filemtime( WP_MEGA_PATH . '/assets/css/frontend.css' )
+            ],
+            'academy-enquiry-style' => [
+                'src'     => WP_MEGA_ASSETS . '/css/enquiry.css',
+                'version' => filemtime( WP_MEGA_PATH . '/assets/css/enquiry.css' )
             ],
             'academy-admin-style' => [
                 'src'     => WP_MEGA_ASSETS . '/css/admin.css',
