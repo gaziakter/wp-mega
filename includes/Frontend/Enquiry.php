@@ -1,6 +1,6 @@
 <?php
 
-namespace WeDevs\Academy\Frontend;
+namespace WpMega\Frontend;
 
 /**
  * Shortcode handler class

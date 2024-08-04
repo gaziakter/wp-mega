@@ -31,11 +31,6 @@ class Assets {
                 'src'     => WP_MEGA_ASSETS . '/js/enquiry.js',
                 'version' => filemtime( WP_MEGA_PATH . '/assets/js/enquiry.js' ),
                 'deps'    => [ 'jquery' ]
-            ],
-            'academy-admin-script' => [
-                'src'     => WP_MEGA_ASSETS . '/js/admin.js',
-                'version' => filemtime( WP_MEGA_PATH . '/assets/js/admin.js' ),
-                'deps'    => [ 'jquery', 'wp-util' ]
             ]
         ];
     }
