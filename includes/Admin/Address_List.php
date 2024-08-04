@@ -96,7 +96,7 @@ class Address_List extends \WP_List_Table{
         $hidden = [];
         $sortable = $this->get_sortable_columns();
 
-        $per_page     = 2;
+        $per_page     = 4;
         $current_page = $this->get_pagenum();
         $offset       = ( $current_page - 1 ) * $per_page;
 
